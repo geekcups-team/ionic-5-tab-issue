@@ -29,6 +29,10 @@ const Home: React.FC = () => {
 
   const RedirectToFirst: React.FC = () => <Redirect to={`${match.url}/first`} />;
 
+  const handleClick = (event: Event) => {
+    alert('Never called');
+  }
+
   return (
     <>
       <IonHeader>
@@ -37,10 +41,10 @@ const Home: React.FC = () => {
         </IonToolbar>
         <IonToolbar>
           <IonTabBar>
-            <IonTabButton tab="first" href={`${match.url}/first`}>
+            <IonTabButton tab="first" href={`${match.url}/first`} onClick={handleClick}>
               <IonLabel>FirstTab</IonLabel>
             </IonTabButton>
-            <IonTabButton tab="second" href={`${match.url}/second`}>
+            <IonTabButton tab="second" href={`${match.url}/second`} onClick={handleClick}>
               <IonLabel>Second tab</IonLabel>
             </IonTabButton>
           </IonTabBar>
